@@ -1,13 +1,14 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+if ( $_SERVER['REQUEST_METHOD'] == 'GET'){
+
 
   require_once('db.php');
 
-  $id = $_GET['id_usuarios'];
+  $id = $_GET['id'];
 
-  $query = "SELECT * FROM usuarios WHERE id_usuarios='$id'";
-
+  $query = "SELECT * FROM usuarios WHERE id='$id'";
+  
   $result = $mysql->query($query);
 
   if ($mysql->affected_rows > 0) {
@@ -27,3 +28,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
   $mysql->close();
 }
+
+?>
